@@ -162,8 +162,8 @@ text-decoration: underline;
     font-size: 3em;
     margin-bottom: 10px;
     line-height: 3em;
-    animation-name: slidein;
-    animation-duration: 4s;
+    /* animation-name: slidein; */
+    /* animation-duration: 4s; */
  }
 
  /* Portfolio section */
