@@ -6,12 +6,20 @@ html {
   *, *:before, *:after {
     box-sizing: inherit;
   }
-  
+  /* Element styles */
+  img{
+      max-width: 100%;
+  }
+  img:hover{opacity:.7; 
+    -moz-box-shadow:     2px -1px 12px 0px #ccc;
+    -webkit-box-shadow:  2px -1px 12px 0px #ccc;
+    box-shadow:          2px -1px 12px 0px #ccc;
+    }
   /* ---- typography ---- */
   
   body {
     color: #111;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-size: 16px;
     line-height: 147%;
   }
@@ -23,100 +31,268 @@ html {
   h3 {}
 
   a{
-    color: blue;
+    color:white;
     text-decoration: none;
 }
 a:hover {
-        color: orange
+        color: blue
 }
-img:hover{opacity:.7; 
--moz-box-shadow:     2px -1px 12px 0px #ccc;
--webkit-box-shadow:  2px -1px 12px 0px #ccc;
-box-shadow:          2px -1px 12px 0px #ccc;
-}
-  
+
   /* ---- layout ---- */
   
   .main-header {
-  
   }
-  
+
   .main-footer {
-    color: white;
-    padding: 60px 0;
-    background: #111;
+    color: black;
+    background: white;
   }
   
   .container {
     margin: 0 20px;
     max-width: 960px;
+    text-align: center;
   }
-  
-  section {
-    margin-bottom: 20px;
-    padding-top: 20px;
+  .container h3{
+    text-align: center;
   }
-  
-  .page-header{
-    background: lightseagreen;
-    color: white;
+  .container p{
+    text-align: center;
 }
-
+.container a{
+    text-align: center;
+}
+  
     .inline-list li{
         display: inline-block;
+        font-size: 0.7em;
         }
    
     
   /* ---- components ---- */
+  
+.btn{
+    display: inline-block;
+    padding: .5em;
+    color: blue;
+    font-weight: 500;
+    /* transition: all .5s ease;
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite; */
+}
+.btn:hover{
+text-decoration: underline;
+}
+  /* ---- header ---- */
+  .page-header{
+      background: white;
+      color: black;  
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: fixed;
+      top:0;
+      left:0;
+      width: 100%;
+      border-bottom-style: solid;
+      border-width: 1px;
+      border-color: lightgray;
+      z-index: 100;
+      
+  }
+  .page-header h1{
+      font-size: 0.7em;
+      line-height: 1;
+
+}
+  .page-header h1 span{
+      display:block;
+  }
   .page-header a{
-    color:white;
+    color:black;
+    padding: 5px 10px;
+    transition: color .1s ease-in-out;
+
     }
     .page-header a:hover{
-        color:blue;
+    color:blue;
     }
-    section:nth-of-type(even){
-        background: lightgray
-    }
-  /* ---- header ---- */
-  .page-header h1{
-      font-size:1em;
-  }
   /* ---- section ---- */
+  section {
+    margin-bottom: 10px;
+    padding: 10px;
+    
+  }
+  section:nth-of-type(even){
+    background:#D7DEDC;
+}
+#contact{
+    margin-bottom: 0;
+}
+
+/* section h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+} */
+  .intro {
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center;
+  }
   
-  
-  /* Small devices (landscape phones, 576px and up) */
-  @media (min-width: 576px) {
+ /* ---- banner ---- */
+ .banner{
+     height: 55vh;
+     background: white;
+     color: black;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+
+ }
+ .banner h1{
+    font-family: 'Inconsolata', monospace;
+    font-size: 3em;
+    margin-bottom: 10px;
+    line-height: 3em;
+    animation-name: slidein;
+    animation-duration: 4s;
+ }
+
+ /* Portfolio section */
+ .flex-list{
+     display: grid;
+     grid-template-columns: 50% 50%;
+     grid-column-gap: 20px;
+     grid-row-gap: 15px;
+ }
+.flex-list li{
+    flex-basis: 100%;
+    position: relative;
+    margin: 2px;
+}
+
+.portfolio-title{
+    position: absolute;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Footer section */
+.inline-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;   
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 20px;
+}
+.logos{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.top{
+    position: fixed;
+    left: 1047px;
+    bottom: 12px;
+    z-index: 1;
+    color: black;
+    background-color: #D7DEDC;
+    padding: 0.5rem 1rem;
+    opacity: 0.7;
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+    .flex-list{
+        display: grid;
+        grid-template-columns: 70%;
+        grid-column-gap: 20px;
+        grid-row-gap: 15px;
+    }
+
     .portfolio-list li{
         width: 50%;
     }
-  }
-  
-  /* Medium devices (tablets, 768px and up) */
-  @media (min-width: 768px) {
-    .page-header{
-        background: lightpink;
-        color: white;
-  }
-  .portfolio-list li{
-    width: 33%;
 }
-  
-  /* Large devices (desktops, 992px and up) */
-  @media (min-width: 992px) {
-  .container{
-      margin: 0 auto;
-  }
-  .page-header h1{
-    font-size: 2em;
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .page-header{
+        background: white;
+        color: black;
+    }
+    .portfolio-list li{
+        width: 33%;
+    }
+    .flex-list li{
+        flex-basis: 50%;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .container{
+        margin: 0 auto;
     }
     .portfolio-list li{
         width: 23%;
     }
+    .inline-list li{
+        display: inline-block;
+        font-size: 0.8em;
+    }
 }
 
-  /* Extra large devices (large desktops, 1200px and up) */
-  @media (min-width: 1200px) {
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    
+}
+
+/* Animation functions */
+
+@keyframes blink{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+@keyframes bounce{
+0%{
+transform: scale(0.1);
+opacity:0;
+}
+60%{
+transform: scale(1.2);
+opacity: 1;
+}
+100%{
+transform: scale(1);
+}
+}
+
+@keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
   
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
   }
-
-
